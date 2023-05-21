@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            h1{
+            text-align: center;
+            }
+
+            .title{
+                padding-bottom: 20px;
+            }
+
+            .madeby{
+                padding-top: 250px;
+
+            }
+
+            body{
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            }
+
+            .dark-mode{
+                background-color: #444;
+                color: #fff;
+            }
+
+            .dark-mode #display{
+                background-color: darkgray;
+                color: black;
+            }
+            
+            .dark-mode #calculator{
+                background-color: black;
+            }
+
+            .dark-mode .madeby{
+                color: #fff;
+            }
+
+            #calculator {
+            width: 220px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            #display {
+            width: 95%;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px;
+            }
+
+            .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 5px;
+            }
+
+
+            
+            .buttons button {
+            flex: 1 0 40px;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            background-color: #71ebb2;
+            border: none;
+            border-radius: 200px;
+            cursor: pointer;
+            }
+
+            .buttons button:hover {
+            background-color: #074222;
+            color: #fff;
+            }
+
+            .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #eee;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        </style>
+    </head>    
+    <body>
+        <h1 class="title"> Calculator </h1>
+        <button class="toggle-button" onclick="toggleBackground()">Toggle Background</button>
+        <div id="calculator">
+            <input type="text" id="display" readonly>
+            <div class="buttons">
+                <button onclick="appendNumber(7)">7</button>
+                <button onclick="appendNumber(8)">8</button>
+                <button onclick="appendNumber(9)">9</button>
+                <button onclick="appendOperator('+')">+</button>
+                <br>
+                <button onclick="appendNumber(4)">4</button>
+                <button onclick="appendNumber(5)">5</button>
+                <button onclick="appendNumber(6)">6</button>
+                <button onclick="appendOperator('-')">-</button>
+                <br>
+                <button onclick="appendNumber(1)">1</button>
+                <button onclick="appendNumber(2)">2</button>
+                <button onclick="appendNumber(3)">3</button>
+                <button onclick="appendOperator('*')">*</button>
+                <br>
+                <button onclick="appendNumber(0)">0</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendOperator('/')">/</button>
+                <button onclick="clearDisplay()">C</button>
+            </div>
+        </div>
+        <p class="madeby">made by Julius Ingeli, 2023</p>    
+        <script src="calculator.js"></script>
+        <script>
+            function toggleBackground() {
+              const body = document.body;
+              body.classList.toggle("dark-mode");
+            }
+          </script>
+    
+    </body>
